@@ -1,0 +1,143 @@
+<mat-sidenav-container
+  class="sidenav-container"
+  style="background-color: #fff; border-top: rgb(230, 225, 225) 1px solid"
+>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [ngClass]="{ hidden: !(isHandset$ | async) }"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-nav-list>
+      <div class="dropdown" style="width: 500px">
+        <button class="dropbtn" mat-list-item>Locatii</button>
+
+        <div class="dropdown-content" style="width: 500px; height: auto">
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+            "
+          >
+            <div style="display: flex; flex-direction: column">
+              <title class="dropdown-content-title">Policlinici</title>
+              <a>Bacau</a>
+              <a>Baia Mare</a>
+              <a>Brasov</a>
+              <a>Bucuresti</a>
+              <a>Valcea</a>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <title class="dropdown-content-title">Spitale</title>
+              <a>Bacau</a>
+              <a>Baia Mare</a>
+              <a>Brasov</a>
+              <a>Bucuresti</a>
+              <a>Valcea</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown" style="width: 500px">
+        <button class="dropbtn" mat-list-item>Specialitati</button>
+
+        <div class="dropdown-content" style="width: 500px; height: auto">
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+            "
+          >
+            <div style="display: flex; flex-direction: column">
+              <a>Alergologie si imunologie</a>
+              <a>Chirurgie generala</a>
+              <a>Genetica medicala</a>
+              <a>Neonatologie</a>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <a>Oncologie medicala</a>
+              <a>Oncologie si Traumatologie</a>
+              <a>Pediatrie</a>
+              <a>Si multe altele</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="dropbtn" mat-list-item>Preturi</button>
+      <a class="dropbtn" mat-list-item>Abonamente</a>
+      <button class="dropbtn" mat-list-item href="shop">Shop</button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="overflow: hidden">
+    <mat-toolbar style="padding: 0px 10%; background-color: #fff">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        style="position: relative; left: 100%"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <mat-icon
+        svgIcon="logo"
+        style="
+          height: 200px;
+          width: 200px;
+          left: 20px;
+          position: absolute center;
+        "
+        (click)="onHomePage()"
+      ></mat-icon>
+      <span class="spacer"></span>
+
+      <!-- <div class="dropdown" style="width: 80px; text-align: center">
+        <a class="dropbtn" style="text-decoration: none; color: inherit"
+          >Locatii</a
+        >
+        <div class="dropdown-content" style="width: 500px; height: auto">
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+            "
+          >
+            <div style="display: flex; flex-direction: column">
+              <title class="dropdown-content-title">Policlinici</title>
+              <a>Bacau</a>
+              <a>Baia Mare</a>
+              <a>Brasov</a>
+              <a>Bucuresti</a>
+              <a>Valcea</a>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <title class="dropdown-content-title">Spitale</title>
+              <a>Bacau</a>
+              <a>Baia Mare</a>
+              <a>Brasov</a>
+              <a>Bucuresti</a>
+              <a>Valcea</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a>Specialitati</a> -->
+      <a href="abonamente" style="text-decoration: none; color: inherit"
+        >Abonamente</a
+      >
+
+      <a href="shop" style="color: inherit; text-decoration: none">Shop</a>
+      <a href="/shoppingcart" style="text-decoration: none; color: inherit"
+        ><mat-icon style="padding-top: 10px">shopping_cart</mat-icon></a
+      >
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

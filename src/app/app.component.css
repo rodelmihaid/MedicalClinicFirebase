@@ -1,0 +1,87 @@
+/* .container {
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  padding: 0px 8%;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: graphik-medium;
+  font-weight: 600;
+}
+
+.point {
+  list-style: none;
+}
+
+.wrapperList li {
+  position: relative;
+  float: left;
+  list-style: none;
+}
+
+.wrapperList li a {
+  padding: 10px;
+  display: block;
+  color: #dc0028 !important;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #a2bf6c;
+  border-radius: 50%;
+  animation: flicker 1s infinite alternate;
+  margin-top: 18px;
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.personSimbol {
+  margin-left: -10px;
+  margin-top: -4px;
+}
+
+#popUpText {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  border-radius: 7px;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  max-width: 400px;
+}
+#textPop {
+  font-size: larger;
+  font: bold;
+  color: #000;
+}
+
+#popUpText::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+#popUp:hover #popUpText {
+  top: 60px;
+  visibility: visible;
+  opacity: 1;
+}
+
+#text {
+  opacity: 0.5;
+} */

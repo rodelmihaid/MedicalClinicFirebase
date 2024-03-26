@@ -1,0 +1,28 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2rem 4rem;
+  background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
+}
+.content-items {
+  display: flex;
+}
+.content-items span {
+  font-size: 16px;
+  width: 300px;
+  padding-top: 20px;
+}
+.calculator {
+  max-width: 300px;
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator-subitem {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,86 @@
+<app-meniu-materials></app-meniu-materials>
+
+<mat-card style="position: sticky; z-index: 1">
+  <mat-card-content class="content">
+    <mat-card class="calculator">
+      <div class="calculator-subitem">
+        <mat-icon>calculate</mat-icon>
+        <span style="margin-left: 10px"> Calculator analize</span>
+      </div>
+      <mat-card-content
+        style="
+          padding-top: 30px;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: 10px;
+        "
+        >Va puteti calcula un pret total al analizelor dorite adaugandu-le aici
+        din lista de analize medicale.</mat-card-content
+      >
+      <div>
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+        <h1 style="margin-top: 30px; margin-bottom: 0; font-weight: bolder">
+          Total: {{ sum }} lei
+        </h1>
+
+        <span>{{ contor }} analize</span>
+      </div>
+
+      <span
+        style="
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          justify-content: left;
+        "
+        *ngFor="let lista of listaAbonamente"
+        >{{ lista }}
+
+        <mat-icon (click)="onClickRemove(lista)"
+          >remove_circle_outline</mat-icon
+        >
+      </span>
+      <div
+        style="
+          margin-top: 30px;
+
+          display: flex;
+          justify-content: space-around;
+        "
+      >
+        <button
+          mat-raised-button
+          routerLink="/shoppingcart"
+          (click)="onClickCos()"
+          style="background-image: linear-gradient(to right, #ff6e7f, #bfe9ff)"
+        >
+          Adauga in cos
+        </button>
+      </div>
+    </mat-card>
+
+    <div>
+      <div *ngFor="let abonament of abonamente | async">
+        <div class="content-items">
+          <span style="max-width: 400px">{{ abonament.nume }}</span>
+          <span
+            style="
+              margin-left: 30px;
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+              justify-content: space-evenly;
+              max-width: 120px;
+            "
+            >{{ abonament.pret }}
+            <mat-icon
+              style="margin-left: 20px; display: flex; align-items: end"
+              (click)="onClick(abonament)"
+              >add_circle_outline</mat-icon
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

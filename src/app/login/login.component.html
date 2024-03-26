@@ -1,0 +1,199 @@
+<div class="header">
+  <mat-icon
+    routerLink="/home"
+    svgIcon="logo"
+    style="height: 200px; width: 200px; left: 20px; position: absolute center"
+  ></mat-icon>
+</div>
+
+<div class="container">
+  <div class="content">
+    <mat-card
+      style="
+        height: 550px;
+        display: flex;
+        justify-content: flex-start;
+        border-top: 4px solid red;
+        padding: 3rem;
+        padding-bottom: 1em;
+        padding-top: 5em;
+      "
+      class="form-container mat-elevation-z5"
+    >
+      <form [formGroup]="loginForm" style="width: 100%; padding: 0">
+        <p style="width: 380px">
+          <mat-form-field appearance="legacy" style="width: 325px">
+            <mat-label>Email</mat-label>
+            <input
+              autocomplete="off"
+              formControlName="email"
+              type="email"
+              matInput
+              placeholder="Email"
+              #userEmail
+              required
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy" style="width: 325px">
+            <mat-label>Parola</mat-label>
+            <input
+              autocomplete="off"
+              formControlName="password"
+              type="password"
+              matInput
+              placeholder="Password"
+              #userPassword
+              required
+            />
+          </mat-form-field>
+        </p>
+
+        <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+          <span>{{ firebaseErrorMessage }}</span>
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+          "
+        >
+          <button
+            mat-raised-button
+            style="background-color: #dc0028; color: white"
+            (click)="authService.SignIn(userEmail.value, userPassword.value)"
+          >
+            Intră în cont
+          </button>
+        </div>
+        <div
+          style="text-align: center !important; padding-top: 1.5rem !important"
+        >
+          Sau logheaza-te prin
+          <div
+            class="connect-methods"
+            style="
+              margin-top: 1rem !important;
+              display: flex;
+              justify-content: space-around;
+            "
+          >
+            <!-- <button
+              mat-button
+              style="background-color: rgb(0, 145, 255); color: white"
+            >
+              <span>Facebook</span><mat-icon>facebook</mat-icon>
+            </button> -->
+            <button
+              mat-button
+              (click)="authService.GoogleAuth()"
+              style="background-color: #dc0028; color: white"
+            >
+              <span>Google</span
+              ><span
+                ><span class="spacer"></span
+                ><mat-icon>g_translate</mat-icon></span
+              >
+            </button>
+            <!-- <button
+              mat-button
+              style="position: static; background-color: black; color: white"
+            >
+              <span>Apple</span><mat-icon>apple</mat-icon>
+            </button> -->
+          </div>
+        </div>
+        <p style="text-align: center !important; padding-top: 3rem !important">
+          Nu ai cont?
+          <a routerLink="/register" style="color: #dc0028"> Cont nou </a>
+        </p>
+        <p style="text-align: center !important; padding-top: 3rem !important">
+          <a routerLink="/forgot-password" style="color: #dc0028"
+            >Forgot Password?</a
+          >
+        </p>
+      </form>
+    </mat-card>
+  </div>
+
+  <div class="footer">
+    <div style="display: flex; flex-wrap: nowrap">
+      <mat-icon style="color: #dc0028"> warning </mat-icon>
+      <span class="txt">
+        Contul Meu este instrumentul prin care ai acces la toate informaţiile
+        medicale care te interesează. Poţi verifica oricând, chiar din faţa
+        calculatorului, programările, consultaţiile, rezultatele analizelor sau
+        costurile investigaţiilor din policlinici.</span
+      >
+    </div>
+    <div style="display: flex; flex-wrap: nowrap">
+      <mat-icon style="color: #dc0028"> warning </mat-icon>
+      <span class="txt">
+        Vrei să ai la îndemână toate aceste date? Nu trebuie decât să intri în
+        contul tău sau să-ţi
+        <span routerLink="/register" style="text-decoration: underline"
+          >creezi unul nou.
+        </span></span
+      >
+    </div>
+  </div>
+</div>
+<!-- <div class="mat-display-table">
+  <div class="mat-display-table-cell">
+    <div class="auth-block">
+      <h3>Sign In</h3>
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" #userName required />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            #userPassword
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="authService.SignIn(userName.value, userPassword.value)"
+        >
+          Log in
+        </button>
+      </div>
+      <div class="form-group">
+        <span class="or"><span class="or-inner">Or</span></span>
+      </div>
+      <div class="form-group">
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="authService.GoogleAuth()"
+        >
+          <mat-icon class="google-icon">google</mat-icon>
+          Log in with Google
+        </button>
+      </div>
+      <div class="forgot-password">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+      </div>
+    </div>
+    <div class="redirect-to-login">
+      <span
+        >Don't have an account?<span class="redirect" routerLink="/register">
+          Sign Up</span
+        ></span
+      >
+    </div>
+  </div>
+</div> -->

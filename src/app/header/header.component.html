@@ -1,0 +1,108 @@
+<div class="container">
+  <button mat-button [matMenuTriggerFor]="belowMenu">
+    RO
+    <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
+  </button>
+  <ul class="wrapperList">
+    <li class="dot"></li>
+    <li>
+      <a id="popUp"
+        >Contact Center 0748 517 213
+        <div>
+          <mat-card id="popUpText">
+            <mat-card-title id="textPop">
+              Vrei să faci o programare?
+            </mat-card-title>
+            <div>
+              <img src="../assets/timpAsteptarePopUp.png" />
+            </div>
+            <mat-card-content>
+              <p id="text">
+                Timpul mediu de asteptare este calculat din momentul in care
+                apelul intra in coada de asteptare si pana esti preluat de un
+                operator.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </a>
+    </li>
+    <li class="point">
+      <a href="/shoppingcart" style="text-decoration: none"
+        >Cos de cumparaturi</a
+      >
+    </li>
+    <li class="point">
+      <div *ngIf="!isLogged">
+        <a href="/login" style="text-decoration: none"> Intra in cont</a>
+      </div>
+      <div *ngIf="isLogged">
+        <a href="/dashboard" style="text-decoration: none"> Contul meu</a>
+      </div>
+    </li>
+    <li class="point">
+      <a><mat-icon class="personSimbol">person_outline</mat-icon></a>
+    </li>
+  </ul>
+
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item>EN</button>
+  </mat-menu>
+</div>
+
+<app-meniu-materials></app-meniu-materials>
+<app-carousel></app-carousel>
+
+<div class="subCarusel">
+  <div class="subCarusel-items">
+    <img src="../../assets/asistentVirtual.png" />
+    <div class="subCarusel-text">
+      <h1>Asistentul virtual</h1>
+      <span>Afli rapid posibilele cauze ale simptomelor tale.</span>
+    </div>
+  </div>
+  <div class="subCarusel-items">
+    <img src="../../assets/clinicaVirtuala.png" />
+    <div class="subCarusel-text">
+      <h1>Clinica virtuala</h1>
+      <span>Consultantii online, de la tine de acasa</span>
+    </div>
+  </div>
+  <div class="subCarusel-items">
+    <img src="../../assets/shop.png" />
+    <div class="subCarusel-text">
+      <h1 style="padding-top: 10px">Shop</h1>
+      <span>Cumperi online abonamentul tau preferat.</span>
+    </div>
+  </div>
+</div>
+
+<div class="staySafe" style="padding-top: 100px; padding-bottom: 100px">
+  <div class="staySafe-items">
+    <!-- <h1>Link-uri rapide</h1>
+    <span>Policlinici</span>
+    <span>Spitale</span>
+    <span>Maternitati</span>
+    <span>Centre imagistica</span>
+    <span>Locatii recoltare analize</span>
+    <span>Clinica de psihoterapie Oana Nicolau</span>
+    <span>Clinici partenere</span>
+    <h1 style="padding-top: 10px">Ghiduri utile</h1>
+    <span>Ghid de pregatire analize</span>
+    <span>Ghiduri de pregatire investigatii</span>
+    <span>Ghiduri de pregatire interventii</span> -->
+  </div>
+  <div class="staySafe-items" id="staySafeitemsId">
+    <h1>Ce vrei sa faci?</h1>
+    <span routerLink="/abonamente">Vreau să mă abonez</span>
+    <span routerLink="/shop">Vreau să îmi fac analize</span>
+
+    <span routerLink="/shop">Vreau sa calculez cat mă costa analizele</span>
+    <span routerLink="/shoppingcart">Vreau să-mi văd coșul </span>
+  </div>
+
+  <img src="../../assets/staySafe.png" />
+</div>
+
+<app-educatie-medicala></app-educatie-medicala>
+<app-chatdialog></app-chatdialog>

@@ -1,0 +1,69 @@
+:host {
+  background-color: #791313;
+}
+
+.container-educatie {
+  background-color: #f7f7f7;
+  margin: 0 50px 50px 50px;
+}
+
+.content-educatie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 50px;
+}
+
+.content-educatie-sub-items a {
+  font-family: graphik-medium;
+  font-size: 0.75rem;
+  display: block;
+  line-height: 1;
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+
+.content-educatie-sub-items span {
+  font-family: graphik-medium;
+  font-size: 0.75rem;
+  display: block;
+  line-height: 1;
+  font-weight: bold;
+  padding-top: 20px;
+}
+.content-educatie-sub-items {
+  display: flex;
+  flex-direction: column;
+  padding: 42px;
+  height: auto;
+  max-width: 300px;
+}
+
+.content-educatie-sub-items:hover {
+  box-shadow: 0 50px 62px 2px rgba(46, 51, 60, 0.2);
+  transition: all 300ms ease;
+  transform: translateY(-30px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+  background-image: linear-gradient(to right, #ff9966, #ff5e62);
+}
+
+.content h1 {
+  font-weight: bolder;
+  font-size: xx-large;
+  padding: 1rem 3rem;
+}
+.content span {
+  font-weight: 400;
+  font-size: medium;
+}
+.content-educatie-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

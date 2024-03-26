@@ -1,0 +1,74 @@
+<app-meniu-materials></app-meniu-materials>
+<div class="content" style="padding: 1rem 2rem">
+  <h1 style="color: black">Abonamente</h1>
+  <span
+    style="
+      margin-bottom: 100px;
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-top: 5%;
+      font-size: larger;
+      font-weight: bolder;
+    "
+  >
+    Sanatatea ta, a celor dragi tie, a colegilor si angajatilor tai este
+    misiunea noastra. De 25 de ani, oferim solutii medicale personalizate pentru
+    persoane fizice, companii si antreprenori la inceput de drum, fiind primul
+    furnizor care a lansat astfel de pachete in Romania. Pune sanatatea pe
+    primul loc si descopera avantajele de a fi abonat Licență!
+  </span>
+  <h1>
+    <button
+      (click)="changeGen()"
+      style="
+        border: none;
+        color: black;
+        margin-bottom: 20px;
+        font-size: larger;
+        font-weight: bolder;
+        background-color: white;
+        border: #dc0028 solid;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+      "
+    >
+      Prețuri pentru {{ gen }}
+    </button>
+  </h1>
+  <div class="content-educatie-items">
+    <mat-card
+      *ngFor="let abonament of abonamente | async"
+      class="content-educatie-sub-items"
+    >
+      <p style="font-size: large; font-weight: bolder; color: #dc0028">
+        {{ abonament.numePachet }}
+      </p>
+      <p style="font-size: xx-large; font-weight: bolder">
+        {{
+          gen === "Adulti"
+            ? abonament.pret + " lei"
+            : (abonament.pret * 1.2).toFixed(0) + " lei"
+        }}
+      </p>
+      <p style="font-weight: bolder; margin-bottom: 25px">pe luna</p>
+      <div *ngFor="let field of abonament | keyvalue">
+        <span style="padding-left: 10px; color: black; font-size: 15px">
+          <ng-container
+            *ngIf="field.key !== 'pret' && field.key !== 'numePachet'"
+          >
+            <p style="font-weight: bold">{{ field.value }}</p>
+          </ng-container>
+        </span>
+      </div>
+      <div>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="onClickCos(abonament, gen)"
+        >
+          Adauga in cos
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

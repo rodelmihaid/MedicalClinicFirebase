@@ -1,0 +1,14 @@
+<div id="chatButton">
+  <mat-icon style="font-size: xx-large" class="button" (click)="toggleIframe()"
+    >message</mat-icon
+  >
+</div>
+
+<div id="iframeContainer" *ngIf="isIframeOpen">
+  <iframe
+    style="border: 2px solid grey"
+    allow="microphone;"
+    src="https://console.dialogflow.com/api-client/demo/embedded/7162c48c-b508-4ac6-9cf5-50c8d93fe235"
+  >
+  </iframe>
+</div>

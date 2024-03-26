@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0 0;
+}
+.container {
+  margin: 0;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.connect-methods button {
+  width: 32.5%;
+}
+.connect-methods {
+  margin-top: 1rem;
+}
+
+.txt {
+  color: #808080;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 35%;
+  padding-top: 30px;
+}

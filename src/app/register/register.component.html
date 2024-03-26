@@ -1,0 +1,164 @@
+<div class="header">
+  <mat-icon
+    routerLink="/home"
+    svgIcon="logo"
+    style="height: 200px; width: 200px; left: 20px; position: absolute center"
+  ></mat-icon>
+</div>
+
+<div class="container">
+  <div class="content">
+    <mat-card
+      style="
+        height: 550px;
+        display: flex;
+        justify-content: flex-start;
+        border-top: 4px solid red;
+        padding: 10rem;
+        padding-bottom: 1em;
+        padding-top: 5em;
+      "
+      class="form-container mat-elevation-z5"
+    >
+      <form
+        [formGroup]="signupForm"
+        style="display: flex; flex-direction: column; align-items: center"
+      >
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Full Name</mat-label>
+            <input
+              autocomplete="off"
+              formControlName="displayName"
+              type="text"
+              matInput
+              placeholder="Display Name"
+              #userFullName
+              required
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              type="email"
+              matInput
+              placeholder="Email"
+              #userEmail
+              required
+            />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input
+              autocomplete="off"
+              formControlName="password"
+              type="password"
+              matInput
+              placeholder="Password"
+              #userPwd
+              required
+            />
+          </mat-form-field>
+        </p>
+        <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+          <span>{{ firebaseErrorMessage }}</span>
+        </div>
+
+        <div style="margin-top: 50px">
+          <button
+            mat-raised-button
+            style="background-color: #dc0028; color: white"
+            (click)="
+              authService.SignUp(
+                userEmail.value,
+                userPwd.value,
+                userFullName.value
+              )
+            "
+          >
+            Înregistrează-te
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
+<!-- <div class="mat-display-table">
+  <div class="mat-display-table-cell">
+    <div class="auth-block">
+      <h3>Sign Up</h3>
+      <div class="class form-group">
+        <mat-form-field appearance="legacy" style="width: 325px">
+          <mat-label>Name</mat-label>
+          <input
+            autocomplete="off"
+            formControlName="email"
+            type="name"
+            matInput
+            placeholder="Name"
+            #userName
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="legacy" style="width: 325px">
+          <mat-label>Email Address</mat-label>
+          <input
+            matInput
+            type="email"
+            placeholder="Email Address"
+            #userEmail
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="legacy" style="width: 325px">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="Password"
+            #userPwd
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="authService.SignUp(userEmail.value, userPwd.value)"
+        >
+          Sign Up
+        </button>
+      </div>
+      <div class="form-group">
+        <span class="or"><span class="or-inner">Or</span></span>
+      </div>
+      <div class="form-group">
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="authService.GoogleAuth()"
+        >
+          <mat-icon class="google-icon">google</mat-icon>
+          Continue with Google
+        </button>
+      </div>
+    </div>
+    <div class="redirect-to-login">
+      <span
+        >Already have an account?<span class="redirect" routerLink="/login"
+          >Log In</span
+        ></span
+      >
+    </div>
+  </div>
+</div> -->

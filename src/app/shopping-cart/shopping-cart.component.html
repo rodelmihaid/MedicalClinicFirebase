@@ -1,0 +1,27 @@
+<mat-card style="margin-top: 150px" class="matcardContainer">
+  <mat-card-title> Shopping Cart </mat-card-title>
+  <mat-card-content>
+    <div>Pretul analizelor este {{ pretAnalize }} Lei</div>
+    <div>
+      Pretul abonamentelor este {{ pretAbonamente }} Lei
+      <div style="display: flex; align-items: center">
+        Abonamentul: {{ numeAbonamente }}
+        <button (click)="onClickCos()">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-footer>
+    Valoarea totala este : {{ valoareaTotala }} Lei
+    <button
+      mat-raised-button
+      style="margin-top: 20px"
+      (click)="onClickCos()"
+      routerLink="/shop"
+    >
+      Back to shop
+    </button>
+    <button mat-raised-button style="margin-top: 20px">Plateste</button>
+  </mat-card-footer>
+</mat-card>
